@@ -1,3 +1,19 @@
+Skip to content
+Features
+Business
+Explore
+Marketplace
+Pricing
+This repository
+Search
+Sign in or Sign up
+1 0 0 Lyzen/vps
+ Code  Issues 0  Pull requests 0  Projects 0  Insights
+vps/vps-setup.sh
+9652654  on 10 Jul 2017
+@Lyzen Lyzen Create vps-setup.sh
+     
+190 lines (189 sloc)  10.5 KB
 #!/bin/bash
 tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-20s\n' "VPS Manager 2.0.1" ; tput sgr0
 tput setaf 3 ; tput bold ; echo "" ; echo "Este script irá:" ; echo ""
@@ -77,37 +93,37 @@ if [ -f "/usr/sbin/ufw" ] ; then
 fi
 if [ -d "/etc/squid/" ]
 then
-	wget https://github.com/Lyzen/vps/blob/master/CENTOS/vpsmanager/squid1.txt -O /tmp/sqd1
+	wget https://raw.githubusercontent.com/Lyzen/vps/master/CENTOS/vpsmanager/squid1.txt -O /tmp/sqd1
 	echo "acl url3 dstdomain -i $ipdovps" > /tmp/sqd2
-	wget https://github.com/Lyzen/vps/blob/master/CENTOS/vpsmanager/squid2.txt -O /tmp/sqd3
+	wget https://raw.githubusercontent.com/Lyzen/vps/master/CENTOS/vpsmanager/squid2.txt -O /tmp/sqd3
 	cat /tmp/sqd1 /tmp/sqd2 /tmp/sqd3 > /etc/squid/squid.conf
-	wget https://github.com/Lyzen/vps/blob/master/CENTOS/vpsmanager/payload.txt -O /etc/squid3/payload.txt
+	wget https://raw.githubusercontent.com/Lyzen/vps/master/CENTOS/vpsmanager/payload.txt -O /etc/squid3/payload.txt
 	echo " " >> /etc/squid/payload.txt
 	grep -v "^Port 443" /etc/ssh/sshd_config > /tmp/ssh && mv /tmp/ssh /etc/ssh/sshd_config
 	echo "Port 443" >> /etc/ssh/sshd_config
 	grep -v "^PasswordAuthentication yes" /etc/ssh/sshd_config > /tmp/passlogin && mv /tmp/passlogin /etc/ssh/sshd_config
 	echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
-	wget https://github.com/Lyzen/vps/blob/master/CENTOS/vpsmanager/scripts/addhost.sh -O /bin/addhost
+	wget https://raw.githubusercontent.com/Lyzen/vps/master/CENTOS/vpsmanager/scripts/addhost.sh -O /bin/addhost
 	chmod +x /bin/addhost
-	wget https://github.com/Lyzen/vps/blob/master/CENTOS/vpsmanager/scripts/pass.sh -O /bin/pass
+	wget https://raw.githubusercontent.com/Lyzen/vps/master/CENTOS/vpsmanager/scripts/pass.sh -O /bin/pass
 	chmod +x /bin/pass
-	wget https://github.com/Lyzen/vps/blob/master/CENTOS/vpsmanager/scripts/crearusuario.sh -O /bin/crearusuario
+	wget https://raw.githubusercontent.com/Lyzen/vps/master/CENTOS/vpsmanager/scripts/crearusuario.sh -O /bin/crearusuario
 	chmod +x /bin/crearusuario
-	wget https://github.com/Lyzen/vps/blob/master/CENTOS/vpsmanager/scripts/delhost.sh -O /bin/delhost
+	wget https://raw.githubusercontent.com/Lyzen/vps/master/CENTOS/vpsmanager/scripts/delhost.sh -O /bin/delhost
 	chmod +x /bin/delhost
-	wget https://github.com/Lyzen/vps/blob/master/CENTOS/vpsmanager/scripts/expcleaner.sh -O /bin/expcleaner
+	wget https://raw.githubusercontent.com/Lyzen/vps/master/CENTOS/vpsmanager/scripts/expcleaner.sh -O /bin/expcleaner
 	chmod +x /bin/expcleaner
-	wget https://github.com/Lyzen/vps/blob/master/CENTOS/vpsmanager/scripts/fecha.sh -O /bin/fecha
+	wget https://raw.githubusercontent.com/Lyzen/vps/master/CENTOS/vpsmanager/scripts/fecha.sh -O /bin/fecha
 	chmod +x /bin/fecha
-	wget https://github.com/Lyzen/vps/blob/master/CENTOS/vpsmanager/scripts/remover.sh -O /bin/remover
+	wget https://raw.githubusercontent.com/Lyzen/vps/master/CENTOS/vpsmanager/scripts/remover.sh -O /bin/remover
 	chmod +x /bin/remover
-	wget https://github.com/Lyzen/vps/blob/master/CENTOS/vpsmanager/scripts/sshlimiter.sh -O /bin/sshlimiter
+	wget https://raw.githubusercontent.com/Lyzen/vps/master/CENTOS/vpsmanager/scripts/sshlimiter.sh -O /bin/sshlimiter
 	chmod +x /bin/sshlimiter
-	wget https://github.com/Lyzen/vps/blob/master/CENTOS/vpsmanager/scripts/alterarlimite.sh -O /bin/alterarlimite
+	wget https://raw.githubusercontent.com/Lyzen/vps/master/CENTOS/vpsmanager/scripts/alterarlimite.sh -O /bin/alterarlimite
 	chmod +x /bin/alterarlimite
-	wget https://github.com/Lyzen/vps/blob/master/CENTOS/vpsmanager/scripts/ayuda.sh -O /bin/ayuda
+	wget https://raw.githubusercontent.com/Lyzen/vps/master/CENTOS/vpsmanager/scripts/ayuda.sh -O /bin/ayuda
 	chmod +x /bin/ayuda
-	wget https://github.com/Lyzen/vps/blob/master/CENTOS/vpsmanager/scripts/sshmonitor.sh -O /bin/sshmonitor
+	wget https://raw.githubusercontent.com/Lyzen/vps/master/CENTOS/vpsmanager/scripts/sshmonitor.sh -O /bin/sshmonitor
 	chmod +x /bin/sshmonitor
 	if [ ! -f "/etc/init.d/squid" ]
 	then
@@ -124,37 +140,37 @@ then
 fi
 if [ -d "/etc/squid/" ]
 then
-	wget https://github.com/Lyzen/vps/blob/master/CENTOS/vpsmanager/squid1.txt -O /tmp/sqd1
+	wget https://raw.githubusercontent.com/Lyzen/vps/master/CENTOS/vpsmanager/squid1.txt -O /tmp/sqd1
 	echo "acl url3 dstdomain -i $ipdovps" > /tmp/sqd2
-	wget https://github.com/Lyzen/vps/blob/master/CENTOS/vpsmanager/squid.txt -O /tmp/sqd3
+	wget https://raw.githubusercontent.com/Lyzen/vps/master/CENTOS/vpsmanager/squid.txt -O /tmp/sqd3
 	cat /tmp/sqd1 /tmp/sqd2 /tmp/sqd3 > /etc/squid/squid.conf
-	wget https://github.com/Lyzen/vps/blob/master/CENTOS/vpsmanager/payload.txt -O /etc/squid/payload.txt
+	wget https://raw.githubusercontent.com/Lyzen/vps/master/CENTOS/vpsmanager/payload.txt -O /etc/squid/payload.txt
 	echo " " >> /etc/squid/payload.txt
 	grep -v "^Port 443" /etc/ssh/sshd_config > /tmp/ssh && mv /tmp/ssh /etc/ssh/sshd_config
 	echo "Port 443" >> /etc/ssh/sshd_config
 	grep -v "^PasswordAuthentication yes" /etc/ssh/sshd_config > /tmp/passlogin && mv /tmp/passlogin /etc/ssh/sshd_config
 	echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
-	wget https://github.com/Lyzen/vps/blob/master/CENTOS/vpsmanager/scripts/addhost.sh -O /bin/addhost
+	wget https://raw.githubusercontent.com/Lyzen/vps/master/CENTOS/vpsmanager/scripts/addhost.sh -O /bin/addhost
 	chmod +x /bin/addhost
-	wget https://github.com/Lyzen/vps/blob/master/CENTOS/vpsmanager/scripts/pass.sh -O /bin/pass
+	wget https://raw.githubusercontent.com/Lyzen/vps/master/CENTOS/vpsmanager/scripts/pass.sh -O /bin/pass
 	chmod +x /bin/pass
-	wget https://github.com/Lyzen/vps/blob/master/CENTOS/vpsmanager/scripts/crearusuario.sh -O /bin/crearusuario
+	wget https://raw.githubusercontent.com/Lyzen/vps/master/CENTOS/vpsmanager/scripts/crearusuario.sh -O /bin/crearusuario
 	chmod +x /bin/crearusuario
-	wget https://github.com/Lyzen/vps/blob/master/CENTOS/vpsmanager/scripts/delhost.sh -O /bin/delhost
+	wget https://raw.githubusercontent.com/Lyzen/vps/master/CENTOS/vpsmanager/scripts/delhost.sh -O /bin/delhost
 	chmod +x /bin/delhost
-	wget https://github.com/Lyzen/vps/blob/master/CENTOS/vpsmanager/scripts/expcleaner.sh -O /bin/expcleaner
+	wget https://raw.githubusercontent.com/Lyzen/vps/master/CENTOS/vpsmanager/scripts/expcleaner.sh -O /bin/expcleaner
 	chmod +x /bin/expcleaner
-	wget https://github.com/Lyzen/vps/blob/master/CENTOS/vpsmanager/scripts/fecha.sh -O /bin/fecha
+	wget https://raw.githubusercontent.com/Lyzen/vps/master/CENTOS/vpsmanager/scripts/fecha.sh -O /bin/fecha
 	chmod +x /bin/fecha
-	wget https://github.com/Lyzen/vps/blob/master/CENTOS/vpsmanager/scripts/remover.sh -O /bin/remover
+	wget https://raw.githubusercontent.com/Lyzen/vps/master/CENTOS/vpsmanager/scripts/remover.sh -O /bin/remover
 	chmod +x /bin/remover
-	wget https://github.com/Lyzen/vps/blob/master/CENTOS/vpsmanager/scripts/sshlimiter.sh -O /bin/sshlimiter
+	wget https://raw.githubusercontent.com/Lyzen/vps/master/CENTOS/vpsmanager/scripts/sshlimiter.sh -O /bin/sshlimiter
 	chmod +x /bin/sshlimiter
-	wget https://github.com/Lyzen/vps/blob/master/CENTOS/vpsmanager/scripts/alterarlimite.sh -O /bin/alterarlimite
+	wget https://raw.githubusercontent.com/Lyzen/vps/master/CENTOS/vpsmanager/scripts/alterarlimite.sh -O /bin/alterarlimite
 	chmod +x /bin/alterarlimite
-	wget https://github.com/Lyzen/vps/blob/master/CENTOS/vpsmanager/scripts/ayuda.sh -O /bin/ayuda
+	wget https://raw.githubusercontent.com/Lyzen/vps/master/CENTOS/vpsmanager/scripts/ayuda.sh -O /bin/ayuda
 	chmod +x /bin/ayuda
-	wget https://github.com/Lyzen/vps/blob/master/CENTOS/vpsmanager/scripts/sshmonitor.sh -O /bin/sshmonitor
+	wget https://raw.githubusercontent.com/Lyzen/vps/master/CENTOS/vpsmanager/scripts/sshmonitor.sh -O /bin/sshmonitor
 	chmod +x /bin/sshmonitor
 	if [ ! -f "/etc/init.d/squid" ]
 	then
