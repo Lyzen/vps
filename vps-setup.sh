@@ -1,19 +1,3 @@
-Skip to content
-Features
-Business
-Explore
-Marketplace
-Pricing
-This repository
-Search
-Sign in or Sign up
-1 0 0 Lyzen/vps
- Code  Issues 0  Pull requests 0  Projects 0  Insights
-vps/vps-setup.sh
-9652654  on 10 Jul 2017
-@Lyzen Lyzen Create vps-setup.sh
-     
-190 lines (189 sloc)  10.5 KB
 #!/bin/bash
 tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-20s\n' "VPS Manager 2.0.1" ; tput sgr0
 tput setaf 3 ; tput bold ; echo "" ; echo "Este script irá:" ; echo ""
@@ -81,13 +65,13 @@ read -p "Desea activar la compresion SSH (puede aumentar el consumo de RAM)? [s/
 echo ""
 tput setaf 7 ; tput setab 4 ; tput bold ; echo "" ; echo "Espere la configuración automática" ; echo "" ; tput sgr0
 sleep 3
-yum -y update
-yum -y upgrade
+apt-get -y update
+apt-get -y upgrade
 rm /bin/crearusuario /bin/expcleaner /bin/sshlimiter /bin/addhost /bin/listar /bin/sshmonitor /bin/ayuda > /dev/null
 rm /root/ExpCleaner.sh /root/CrearUsuario.sh /root/sshlimiter.sh > /dev/null
-yum -y install squid
+apt-get -y install squid
 killall apache2
-#yum purge apache2 -y
+apt-get purge apache2 -y
 if [ -f "/usr/sbin/ufw" ] ; then
 	ufw allow 443/tcp ; ufw allow 80/tcp ; ufw allow 3128/tcp ; ufw allow 8799/tcp ; ufw allow 8080/tcp
 fi
